@@ -3,6 +3,8 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Libraries -->
+<script src="lib/angular.js"></script>
 <link rel="stylesheet" href="css.css">
 <link rel="stylesheet" href="w3.css">
 
@@ -65,15 +67,40 @@ p {line-height: 2}
 </div>
 
 <!-- RSVP modal -->
-<div id="id01" class="w3-modal">
+<div ng-controller="homectrl" id="id01" class="w3-modal">
   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
     <div class="w3-container w3-white w3-center">
       <h1 class="w3-wide">CAN YOU COME?</h1>
       <p>We really hope you can make it.</p>
 
-      <form>
-        <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
-      </form>
+        <div ng-repeat="x in num() track by $index">
+          <input class="w3-input w3-border"
+               type="text"
+               placeholder="Name(s)"
+               ng-model="namelist[$index].name">
+
+          <input type="checkbox"
+                 ng-model="namelist[$index].ischild">
+
+          <!-- x -->
+          <span class="w3-padding-16"
+                class="w3-right w3-margin-right"
+                style="cursor: pointer;"
+                ng-click="remove($index)">&emsp; &#10060
+            </span>
+          <p></p>
+        </div>
+
+        <!-- Add namelist & Reset buttons -->
+        <button ng-click="addName()"
+                ng-hide="number<1"
+                class="w3-btn w3-padding w3-green">
+          Add names</button>
+        <button ng-click="reset()"
+                class="w3-btn w3-padding w3-red">
+          Reset</button>
+        <!-- /New -->
+
 
       <p><i>Sincerely, Laura & Eliran</i></p>
       <div class="w3-row">
