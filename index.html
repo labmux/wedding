@@ -3,25 +3,18 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Libraries -->
-<script src="lib/angular.js"></script>
-<script src="lib/angular-ui-router.js"></script>
-<link rel="stylesheet" href="css.css">
-<link rel="stylesheet" href="w3.css">
 
 <style>
 body,h1,h2{font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 p {line-height: 2}
-.bgimg, .bgimg2 {
+.bgimg{
     min-height: 100%;
     background-position: center;
     background-size: cover;
 }
 .bgimg {background-image: url("pics/img2.jpg")}
-.bgimg2 {background-image: url("pics/img2.jpg")}
 </style>
-<body>
 
 <!-- Header / Home-->
 <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
@@ -32,8 +25,20 @@ p {line-height: 2}
   </div>
 </header>
 
+<head>
+  <!-- Css -->
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="w3.css">
+  <!-- Libraries -->
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="services.js"></script>
+  <script src="homecontroller.js"></script>
+</head>
 
-
+<body ng-app="routerApp">
 <!-- Wedding information -->
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
   <div class="w3-content">
@@ -53,7 +58,6 @@ p {line-height: 2}
       </div>
     </div>
   </div>
-</div>
 
 <!-- RSVP section -->
 <div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
@@ -68,31 +72,69 @@ p {line-height: 2}
 </div>
 
 <!-- RSVP modal -->
-<div ng-controller="homectrl" id="id01" class="w3-modal">
+<div id="id01" class="w3-modal" ng-controller="homectrl">
   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
     <div class="w3-container w3-white w3-center">
       <h1 class="w3-wide">CAN YOU COME?</h1>
       <p>We really hope you can make it.</p>
 
-      <form>
-        <input class="w3-input w3-border"
+      <p>What is the total amount of people coming?</p>
+      <input type="number"
+             placeholder="Select number"
+             ng-model="number">
+
+        <div ng-repeat="x in num() track by $index">
+            <input class="w3-input w3-border"
                type="text"
                placeholder="Name(s)"
-               name="name">
-      </form>
+               ng-model="namelist[$index].name">
+            <input type="checkbox"
+                 ng-model="namelist[$index].ischild">
 
+          <!-- x -->
+          <span class="w3-padding-16"
+                class="w3-right w3-margin-right"
+                style="cursor: pointer;"
+                ng-click="remove($index)">&emsp; &#10060
+            </span>
+          <p></p>
+        </div>
+
+        <!-- Add namelist & Reset buttons -->
+        <button ng-click="reset()"
+                class="w3-btn w3-padding w3-red">
+          Reset</button>
+       <!-- Error message -->
+       <p style="color: red">{{errormsg}}</p>
+       
       <p><i>Sincerely, Laura & Eliran</i></p>
       <div class="w3-row">
         <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Going</button>
+          <button onclick="document.getElementById('id01').style.display='none'; confirmation()"
+                  ng-click="coming()"
+                  type="button"
+                  class="w3-button w3-block w3-green" >Going </button>
         </div>
+
         <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Can't come</button>
+          <button onclick="document.getElementById('id01').style.display='none'; confirmation()"
+                  ng-click="notcoming()"
+                  type="button"
+                  class="w3-button w3-block w3-red">Can't come</button>
         </div>
+  
+  
+        <script>
+        function confirmation () {
+          alert("Thank you, your input has been saved!");
+        }
+        </script>
       </div>
     </div>
   </div>
 </div>
-
 </body>
+
+
+
 </html>

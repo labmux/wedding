@@ -7,15 +7,43 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
     $scope.resp = "";
     $scope.number = 1;
 
-    $scope.listt = "";
+    $scope.list = "";
 
-    
-    $scope.addName = function() {
+     $scope.coming = function() {
         if($scope.namelist.length == $scope.number && $scope.hasEmpty() == false)
         {
+            $scope.namelist.forEach(function(obj) { obj.iscoming = "true"; });
+
             $scope.namelist_string = JSON.stringify($scope.namelist);
 
-            $scope.listt = List.postList($scope.namelist_string).then(
+            $scope.list = List.postList($scope.namelist_string).then(
+                function success(response) {
+                    $scope.resp = response.data;
+                    $scope.errormsg = "Added names succesfully";
+                    },
+                function error(response) {
+                    $scope.resp = response.statusText;
+                    $scope.errormsg = "Something went wrong:" + response.statusText;
+                });
+        }
+        else if($scope.namelist.length < $scope.number || $scope.hasEmpty() == true)
+            $scope.errormsg = "Error 101: Not all fields have been initialized";
+
+        else if($scope.number <= 0)
+            $scope.errormsg = "Error 102: Make sure fields have been initialized";
+
+        else
+            $scope.errormsg = "Error 103: Make sure unused submission areas have been cleared";
+    }
+
+    $scope.notcoming = function () {
+        if($scope.namelist.length == $scope.number && $scope.hasEmpty() == false)
+        {
+            $scope.namelist.forEach(function(obj) { obj.iscoming = "false"; });
+
+            $scope.namelist_string = JSON.stringify($scope.namelist);
+
+            $scope.list = List.postList($scope.namelist_string).then(
                 function success(response) {
                     $scope.resp = response.data;
                     $scope.errormsg = "Added names succesfully";
