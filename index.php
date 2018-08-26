@@ -104,31 +104,24 @@ p {line-height: 2}
         <button ng-click="reset()"
                 class="w3-btn w3-padding w3-red">
           Reset</button>
-       <!-- Error message -->
-       <p style="color: red">{{errormsg}}</p>
-       
+      
+
       <p><i>Sincerely, Laura & Eliran</i></p>
       <div class="w3-row">
         <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'; confirmation()"
+          <button onclick="document.getElementById('id01').style.display='none';"
                   ng-click="coming()"
                   type="button"
                   class="w3-button w3-block w3-green" >Going </button>
         </div>
 
         <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'; confirmation()"
+          <button onclick="document.getElementById('id01').style.display='none';"
                   ng-click="notcoming()"
                   type="button"
                   class="w3-button w3-block w3-red">Can't come</button>
         </div>
   
-  
-        <script>
-        function confirmation () {
-          alert("Thank you, your input has been saved!");
-        }
-        </script>
       </div>
     </div>
   </div>

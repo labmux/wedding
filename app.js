@@ -12,7 +12,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('home', {
             url: '/home',
-            templateUrl: 'index.html',
+            templateUrl: 'index.php',
             controller: 'homectrl'
           })
         .state('login', {
