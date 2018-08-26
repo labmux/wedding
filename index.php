@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Laura and Eliran's wedding reservations</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body,h1,h2{font-family: "Snell Roundhand", cursive}
+body,h1,h2{font-family: "Snell Roundhand", cursive, sans-serif}
+.home {font-family: "Snell Roundhand", cursive, sans-serif}
 body, html {height: 100%}
 p {line-height: 2}
 .bgimg{
-    min-height: 100%;
+    min-height: 130%;
     background-position: center;
     background-size: cover;
 }
-.bgimg {background-image: url("pics/img2.jpg")}
+.bgimg {background-image: url("pics/red.jpg")}
 </style>
-
-<!-- Header / Home-->
-<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-text-white w3-center">
-    <h1 class="w3-jumbo">Laura & Eliran</h1>
-    <h2></h2>
-    <h2><b>08.10.2018</b></h2>
-  </div>
-</header>
 
 <head>
   <!-- Css -->
@@ -35,8 +27,19 @@ p {line-height: 2}
   <!-- Scripts -->
   <script src="app.js"></script>
   <script src="services.js"></script>
-  <script src="homecontroller.js"></script>
+  <script src="homepage/homecontroller.js"></script>
+  <script src="adminpage/admincontroller.js"></script>
+  <script src="loginpage/logincontroller.js"></script>
 </head>
+
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h1>Laura & Eliran</h1>
+    <h2></h2>
+    <h2><b>08.10.2018</b></h2>
+  </div>
+</header>
 
 <body ng-app="routerApp">
 <!-- Wedding information -->
@@ -78,7 +81,7 @@ p {line-height: 2}
       <h1 class="w3-wide">CAN YOU COME?</h1>
       <p>We really hope you can make it.</p>
 
-      <p>What is the total amount of people coming?</p>
+      <p>How many people are coming? Check the checkbox if it's a child</p>
       <input type="number"
              placeholder="Select number"
              ng-model="number">

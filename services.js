@@ -36,7 +36,7 @@ routerApp.factory('List', function($http) {
     {
         return $http({
             method: 'POST',
-            url: 'uploadList.php',
+            url: 'homepage/uploadList.php',
             data: 'list=' + namelist,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
