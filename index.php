@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body,h1,h2{font-family: "Raleway", sans-serif}
+body,h1,h2{font-family: "Snell Roundhand", cursive}
 body, html {height: 100%}
 p {line-height: 2}
 .bgimg{
@@ -46,7 +46,7 @@ p {line-height: 2}
      <div class="w3-half">
         <h2>When</h2>
         <p>October 8th 2018</p>
-        <p>Cocktail - 5:30pm</p>
+        <p>Cocktail - 5:00pm</p>
         <p>Huppa - 7:00pm</p>
       </div>
       <div class="w3-half">
