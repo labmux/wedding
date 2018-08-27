@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body,h1,h2{font-family: "Snell Roundhand", cursive, sans-serif}
+html{font-family: "Snell Roundhand", cursive, sans-serif}
 .home {font-family: "Snell Roundhand", cursive, sans-serif}
 body, html {height: 100%}
 p {line-height: 2}
@@ -37,7 +37,7 @@ p {line-height: 2}
   <div class="w3-display-middle w3-text-white w3-center">
     <h1>Laura & Eliran</h1>
     <h2></h2>
-    <h2><b>08.10.2018</b></h2>
+    <h2>08.10.2018</h2>
   </div>
 </header>
 
