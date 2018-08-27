@@ -88,7 +88,7 @@ p {line-height: 2}
         <div ng-repeat="x in num() track by $index">
             <input class="w3-input w3-border"
                type="text"
-               placeholder="Name(s)"
+               placeholder="Full Name"
                ng-model="namelist[$index].name">
             <input type="checkbox"
                  ng-model="namelist[$index].ischild">
