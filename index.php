@@ -14,7 +14,7 @@ p {line-height: 2}
     background-position: center;
     background-size: cover;
 }
-.bgimg {background-image: url("pics/red.jpg")}
+.bgimg {background-image: url("pics/pic2.jpg")}
 </style>
 
 <head>
