@@ -49,15 +49,14 @@ p {line-height: 2}
      <div class="w3-half">
         <h2>When</h2>
         <p>October 8th 2018</p>
-        <p>Cocktail - 5:00pm</p>
-        <p>Huppa - 7:00pm</p>
+        <p>Cocktail - 5:00 pm</p>
+        <p>Huppa - 7:00 pm</p>
       </div>
       <div class="w3-half">
         <h2>Where</h2>
-        <p>Spanish & Portuguese Synagogue</p>
-        <p>4894 Avenue St Kevin</p>
-        <p>Montréal, QC H3W 2V2</p>
-        <p>Canada</p>
+        <p>Congregation Spanish and Portuguese</p>
+        <p>4894 Avenue St-Kevin, Montreal</p>
+        <p>Valet service</p>
       </div>
     </div>
   </div>
@@ -65,7 +64,7 @@ p {line-height: 2}
 <!-- RSVP section -->
 <div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
   <h1>HOPE YOU CAN MAKE IT!</h1>
-  <p class="w3-large">Kindly Respond By January, 2017</p>
+  <p class="w3-large">Kindly Respond By September 8th, 2018</p>
   <p class="w3-xlarge">
     <!-- RSVP button -->
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">
