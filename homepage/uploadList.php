@@ -3,10 +3,10 @@
 var_dump($_POST["list"]);
 
 //OPEN FILE ang get 'list'
-$myfile = fopen("testfile.txt", "r+") or die ("Just die");
+$myfile = fopen("textfile.txt", "r+") or die ("Just die");
 
 //get original list and updated list
-$oglist = fread($myfile, filesize("testfile.txt"));
+$oglist = fread($myfile, filesize("textfile.txt"));
 $updatedList = $_POST["list"];
 
 //decode lists, if empty create it to avoid errors
@@ -26,7 +26,7 @@ $jsonOglist = array_merge($jsonOglist, $jsonlist);
 $oglist = json_encode($jsonOglist);
 
 //WRITE TO TEXT
-file_put_contents("testfile.txt", "$oglist", FILE_USE_INCLUDE_PATH);
+file_put_contents("textfile.txt", "$oglist", FILE_USE_INCLUDE_PATH);
 fclose($myfile);
 ?>
 

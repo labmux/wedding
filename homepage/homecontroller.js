@@ -30,25 +30,25 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
                     $scope.errormsg = "Something went wrong:" + response.statusText;
                 });
         }
-        else if($scope.namelist.length < $scope.number || $scope.hasEmpty() == true)
+        else if($scope.namelist.length > $scope.number || $scope.hasEmpty() == true)
         {
             $scope.errormsg = "Error 101: Not all fields have been initialized\n";
             alert("Your name was not saved to the list. Not all fields have been initialized."
-                + "\nPlease try again");
+                + "\nPress the reset button and try again")
         }
 
         else if($scope.number <= 0)
         {
             $scope.errormsg = "Error 102: Make sure fields have been initialized";
             alert("Your name was not saved to the list. Make sure fields have been initialized"
-            + "\nPlease try again");
+            + "\nPress the reset button and try again")
         }
 
         else
         {
             $scope.errormsg = "Error 103: Make sure unused submission areas have been cleared";
             alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared"
-            + "\nPlease try again");
+            + "\nPress the reset button and try again")
         }
     }
 
@@ -77,21 +77,21 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
         {
             $scope.errormsg = "Error 101: Not all fields have been initialized";
             alert("Your name was not saved to the list. Not all fields have been initialized"
-            + "\nPlease try again")
+            + "\nPress the reset button and try again")
         }
 
         else if($scope.number <= 0)
         {
             $scope.errormsg = "Error 102: Make sure fields have been initialized";
             alert("Your name was not saved to the list. Make sure fields have been initialized"
-            + "\nPlease try again")
+            + "\nPress the reset button and try again")
         }
 
         else
         {
             $scope.errormsg = "Error 103: Make sure unused submission areas have been cleared";
             alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared"
-            + "\nPlease try again")
+            + "\nPress the reset button and try again")
         }
     }
 

@@ -14,7 +14,7 @@ p {line-height: 2}
     background-position: center;
     background-size: cover;
 }
-.bgimg {background-image: url("pics/IMG-20180826-WA0029.jpg")}
+.bgimg {background-image: url("pics/blackandwhite.jpg")}
 </style>
 
 <head>
