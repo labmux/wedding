@@ -85,13 +85,16 @@ p {line-height: 2}
              placeholder="Select number"
              ng-model="number">
 
+
         <div ng-repeat="x in num() track by $index">
+          
             <input class="w3-input w3-border"
                type="text"
                placeholder="Full Name"
-               ng-model="namelist[$index].name">
+               ng-model="namelist[$index].name"></td>
             <input type="checkbox"
-                 ng-model="namelist[$index].ischild">
+                 ng-model="namelist[$index].ischild"></td>
+          
 
           <!-- x -->
           <span class="w3-padding-16"
@@ -102,12 +105,8 @@ p {line-height: 2}
           <p></p>
         </div>
 
-        <!-- Add namelist & Reset buttons -->
-        <button ng-click="reset()"
-                class="w3-btn w3-padding w3-red">
-          Reset</button>
-      
 
+      
       <p><i>Sincerely, Laura & Eliran</i></p>
       <div class="w3-row">
         <div class="w3-half">
@@ -123,8 +122,7 @@ p {line-height: 2}
                   type="button"
                   class="w3-button w3-block w3-red">Can't come</button>
         </div>
-  
-      </div>
+        </div>
     </div>
   </div>
 </div>

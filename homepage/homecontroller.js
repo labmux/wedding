@@ -29,27 +29,30 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
                     $scope.resp = response.statusText;
                     $scope.errormsg = "Something went wrong:" + response.statusText;
                 });
+            //reset
+            $scope.reset();
         }
         else if($scope.namelist.length > $scope.number || $scope.hasEmpty() == true)
         {
             $scope.errormsg = "Error 101: Not all fields have been initialized\n";
-            alert("Your name was not saved to the list. Not all fields have been initialized."
-                + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list. Not all fields have been initialized.");
+            $scope.reset();
         }
 
         else if($scope.number <= 0)
         {
             $scope.errormsg = "Error 102: Make sure fields have been initialized";
-            alert("Your name was not saved to the list. Make sure fields have been initialized"
-            + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list. Make sure fields have been initialized");
+            $scope.reset();
         }
 
         else
         {
             $scope.errormsg = "Error 103: Make sure unused submission areas have been cleared";
-            alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared"
-            + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared");
+            $scope.reset();
         }
+
     }
 
     $scope.notcoming = function () {
@@ -72,26 +75,28 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
                     $scope.resp = response.statusText;
                     $scope.errormsg = "Something went wrong:" + response.statusText;
                 });
+            //reset all values
+            $scope.reset();
         }
         else if($scope.namelist.length < $scope.number || $scope.hasEmpty() == true)
         {
             $scope.errormsg = "Error 101: Not all fields have been initialized";
-            alert("Your name was not saved to the list. Not all fields have been initialized"
-            + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list. Not all fields have been initialized");
+            $scope.reset();
         }
 
         else if($scope.number <= 0)
         {
             $scope.errormsg = "Error 102: Make sure fields have been initialized";
-            alert("Your name was not saved to the list. Make sure fields have been initialized"
-            + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list. Make sure fields have been initialized");
+            $scope.reset();
         }
 
         else
         {
             $scope.errormsg = "Error 103: Make sure unused submission areas have been cleared";
-            alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared"
-            + "\nPress the reset button and try again")
+            alert("Your name was not saved to the list.  Make sure unused submission areas have been cleared");
+            $scope.reset();
         }
     }
 
@@ -121,8 +126,8 @@ routerApp.controller('homectrl', function($scope, $http, Admin, List) {
     {
         for (var i = 0; i < $scope.namelist.length; i++)
         {
-            if($scope.namelist[i].name == "" || $scope.namelist[i].name === undefined ||
-                $scope.namelist[i] === null || $scope.namelist[i].name == "" )
+            if(!angular.isDefined($scope.namelist[i]) || !angular.isDefined($scope.namelist[i].name) || $scope.namelist[i].name == "" ||
+                $scope.namelist[i] === null)
                 return true;
         }
         return false;
